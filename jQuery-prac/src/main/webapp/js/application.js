@@ -11,8 +11,15 @@ jQuery(document).ready(function() {
 	//$("#vacations-wrapper").before(price);
 	//$("#vacations-wrapper").after(price);
 	price.appendTo('#vacations-wrapper');
-	price.prependTo('#vacations-wrapper');
-	price.insertAfter('#vacations-wrapper');
-	price.insertBefore('#vacations-wrapper');
+	price.prependTo($('#vacations-wrapper'));
+	//price.insertAfter('#vacations-wrapper');
+	//price.insertBefore('#vacations-wrapper');
+	
+	$("#buttonID").on('click', function(){
+		var message = $('<span>Good job</span>');
+		$("#buttonID").remove();
+		$('#vacations-wrapper').append(message);
+		
+	});
 	
 });
