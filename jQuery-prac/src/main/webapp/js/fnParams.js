@@ -28,3 +28,24 @@ function btnClickEventHandler(e){
 	console.log("event handler args length:"+arguments.length);
 	console.log("Event obj:"+e);
 }
+
+function callBackFn(){
+	console.log("Invoked callback method");
+	console.log("args:"+arguments.length);
+	
+}
+
+function callbackCaller(method){
+	console.log("Before calling callback method");
+	method("abc","def");
+}
+
+callbackCaller(callBackFn);
+
+
+
+function eventCall(event){
+	console.log("Event:"+event);
+}
+
+(function(){eventCall(event);})();
