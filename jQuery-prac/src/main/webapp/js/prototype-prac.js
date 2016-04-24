@@ -77,3 +77,39 @@ Vehicle.runMethod({
 	"name" : "Swift",
 	"mileage" : 50
 });
+
+var myApplication = function() {
+	var name = "guru";
+	var age = 60;
+	return {
+		method1 : function() {
+			return "From method1";
+		},
+		method2 : function() {
+			return "From method2";
+		}
+	}
+}();
+
+console.log(myApplication.method1());
+console.log(myApplication.method2());
+
+
+var revealingPattern = function() {
+	var name = "guru";
+	var age = 60;
+	
+	function fromMethod1(){
+		return "From method1";
+	}
+	function fromMethod2(){
+		return "From method2";
+	}
+	return {
+		method1 : fromMethod1,
+		method2 : fromMethod2
+	}
+}();
+
+console.log(revealingPattern.method1());
+console.log(revealingPattern.method2());
