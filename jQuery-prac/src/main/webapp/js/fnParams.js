@@ -21,14 +21,40 @@ methodA("A", "B", "C");
 
 (function varArgs(...args){
 	console.log("Arguments received:"+args.length);
-})();
+})(); 
 
-function btnClickEventHandler(e){
-	console.log("Clicked on button");
-	console.log("event handler args length:"+arguments.length);
-	console.log("Event obj:"+e);
+var btnClickEventHandler;
+$(document).ready(function () {
+	btnClickEventHandler = function (eventObj){
+	//console.log("Clicked on button");
+	//console.log("event handler args length:"+arguments.length);
+	//console.log("Event obj:"+eventObj);
+	console.log("Event type:"+eventObj.type);
+	console.log("Which mouse key pressed:"+eventObj.which);
+	console.log("Source element:"+eventObj.srcElement);
+	var srcObj =eventObj.target || eventObj.srcElement;
+	
+	console.log(srcObj.value);
+	srcObj.returnValue = false;
+	//eventObj.preventDefault();
+	console.log(eventObj.originalProperties);
+	console.log(eventObj.currentTarget);
+	console.log(eventObj.data);
+	console.log( event.isDefaultPrevented());
 }
+});
 
+function btnMouseOverEvent(eventObj){
+	var x = eventObj.clientX;
+	var y = eventObj.clientY;
+	
+	//var button = document.getElementById("btnID");
+	//button.style.position="absolute";
+	//button.style.left = x +"px";
+	//button.style.top= y+"px";
+	//console.log("X:"+button.style.left+" Y:"+button.style.top);
+	
+}
 function callBackFn(){
 	console.log("Invoked callback method");
 	console.log("args:"+arguments.length);
@@ -49,3 +75,11 @@ function eventCall(event){
 }
 
 (function(){eventCall(event);})();
+
+
+$(document).ready(function () {
+    $("button").click(function (event) {
+        //event.preventDefault();
+        //alert("Default prevented: " + event.isDefaultPrevented());
+    });
+});
