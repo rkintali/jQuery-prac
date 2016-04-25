@@ -107,4 +107,10 @@ $(document).ready(
 			// with trigger - you can pass arguments as well
 			$(document).trigger("myCustomEvent", [ "bim", "baz" ]);
 
+			// effects.
+			$("#effectsID").on('click', function() {
+				console.log("Click event triggered");
+				$("div.hide-test").toggle('slow');
+			});
+
 		});
