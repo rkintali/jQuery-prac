@@ -2,3 +2,7 @@
 .hide-test{
 	display: none;
 }
+
+.background-gray{
+	background-color: gray;
+}

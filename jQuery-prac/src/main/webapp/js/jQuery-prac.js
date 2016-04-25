@@ -110,7 +110,17 @@ $(document).ready(
 			// effects.
 			$("#effectsID").on('click', function() {
 				console.log("Click event triggered");
-				$("div.hide-test").toggle('slow');
+				//$("div.hide-test").toggle('slow');
+				//	$("div.hide-test").slideToggle('slow');
+				// practice event handlers on toggle / fade / show hide methods
+				/*
+				$("div.hide-test").fadeToggle('slow' , function(){
+					$(this).addClass("background-gray");
+				});
+				*/
+				$("div.hide-test").toggle('slow').delay(1000).slideToggle('slow').delay(1000).fadeToggle('slow' , function(){
+					$(this).addClass("background-gray");
+				});
 			});
 
 		});
